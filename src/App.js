@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { questions } from './data/questions';
 import './App.css';
+import { Questions } from './components/Questions';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div>
-
+      <Questions questions={ questions } />
     </div>
   );
 }
