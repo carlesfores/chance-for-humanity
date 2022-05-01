@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ProgressBar } from './components/ProgressBar';
 import { Question } from './components/Question';
-import { Result } from './components/Result';
+import { Results } from './components/Results';
 import { questions } from './data/questions.js';
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
           )
         }
         { showResult &&
-          <Result progress={progress} />
+          <Results progress={progress} />
         }
       <ProgressBar progressLength={progress.length} totalSteps={totalSteps}/>  
     </div>
