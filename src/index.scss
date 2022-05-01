@@ -32,7 +32,7 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 18px;
 }
 
 input {
@@ -94,7 +94,7 @@ li {
 .question {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
@@ -111,7 +111,7 @@ li {
         &__next {
             display: flex;
             justify-content: center;
-            margin-top: 14px;
+            margin-top: 18px;
         }
     }
     &_disabled {

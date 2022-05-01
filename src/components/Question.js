@@ -53,7 +53,7 @@ export const Question = ( {
             }
             {
                 showResponse && 
-                    <div className='question__next'>
+                    <div className='question__next animate__animated animate__fadeIn'>
                         <button onClick={nextStep}>Next</button>
                     </div>
             }
