@@ -1,16 +1,53 @@
 import React, { useState } from 'react';
-import { questions } from './data/questions';
 import './App.css';
-import { Questions } from './components/Questions';
+import { Question } from './components/Question';
+import { Result } from './components/Result';
+import { questions } from './data/questions.js';
 
 function App() {
 
   const [ step, setStep ] = useState(1);
   const [ progress, setProgress ] = useState([]);
+  const [ showResult, setShowResult ] = useState(false);
+  const totalSteps = questions.length;
+
+  const updateProgress = ( status ) => {
+    setProgress([
+      ...progress,
+      {
+        'step': step,
+        'status': status
+      }
+    ])
+  };
+
+  const nextStep = () => {
+    if (totalSteps > step ) {
+      setStep( step + 1);
+    } else {
+      setShowResult( true );
+    }
+  };
 
   return (
-    <div>
-      <Questions questions={ questions } />
+    <div className='container'>
+      { !showResult ?
+        <div className='questions'>
+          {
+            questions.map( ( question ) => 
+              <Question
+                key={ question.id }
+                updateProgress= { updateProgress }
+                nextStep= { nextStep }
+                step={ step }
+                { ...question }
+              /> 
+            )
+          }
+        </div>
+        :
+        <Result progress={ progress } />
+      }
     </div>
   );
 }
