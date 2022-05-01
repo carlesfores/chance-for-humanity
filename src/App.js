@@ -23,10 +23,10 @@ function App() {
   };
 
   const nextStep = () => {
-    if (totalSteps > step ) {
-      setStep( step + 1);
+    if (totalSteps > step) {
+      setStep(step + 1);
     } else {
-      setShowResult( true );
+      setShowResult(true);
     }
   };
 
@@ -37,19 +37,18 @@ function App() {
           {
             questions.map( ( question ) => 
               <Question
-                key={ question.id }
-                updateProgress= { updateProgress }
-                nextStep= { nextStep }
-                step={ step }
-                { ...question }
+                key={question.id}
+                updateProgress= {updateProgress}
+                nextStep= {nextStep}
+                step={step}
+                {...question}
               /> 
             )
           }
         </div>
-        :
-        <Result progress={ progress } />
+        :<Result progress={progress} />
       }
-      <ProgressBar progressLength={ progress.length } questionsLength={ questions.length }/>  
+      <ProgressBar progressLength={progress.length} questionsLength={questions.length}/>  
     </div>
   );
 }

@@ -12,9 +12,9 @@ export const Question = ( {
     input
 } ) => {
 
-    const [ value, setValue ] = useState('');
-    const [ status, setStatus ] = useState(false);
-    const [ showResponse, setShowResponse ] = useState(false);
+    const [value, setValue] = useState('');
+    const [status, setStatus] = useState(false);
+    const [showResponse, setShowResponse] = useState(false);
 
     const validateResponse = () => {
         return value.toLocaleLowerCase() === response.toLocaleLowerCase();
@@ -23,38 +23,38 @@ export const Question = ( {
     const handleSubmit = ( event ) => {
         event.preventDefault();
         const result = validateResponse();
-        updateProgress( result );
-        setStatus( result )
+        updateProgress(result);
+        setStatus(result)
         setShowResponse(true);
         setValue('');
     }
 
-    const handleChange = (event) => {
+    const handleChange = ( event ) => {
         setValue(event.target.value);
     }
 
     return(
-        <div className={ `question${ step !== id ? '_disabled' : '' } animate__animated animate__fadeIn` }>
+        <div className={`question${step !== id ? '_disabled' : ''} animate__animated animate__fadeIn`}>
             <div className='question__title'>
-                 { question }
+                 {question}
             </div>
             <div className='question__form'>
                 <QuestionForm 
-                    input={ input } 
-                    handleSubmit={ handleSubmit } 
-                    handleChange={ handleChange } 
-                    showResponse={ showResponse }
-                    value={ value }
+                    input={input} 
+                    handleSubmit={handleSubmit} 
+                    handleChange={handleChange} 
+                    showResponse={showResponse}
+                    value={value}
                 />
             </div>
             {
                 showResponse &&
-                    <QuestionResult status={ status } response={ response } />
+                    <QuestionResult status={status} response={response} />
             }
             {
                 showResponse && 
                     <div className='question__next'>
-                        <button onClick={ nextStep } > Next </button>
+                        <button onClick={nextStep}>Next</button>
                     </div>
             }
         </div>
