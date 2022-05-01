@@ -48,7 +48,7 @@ function App() {
         </div>
         :<Result progress={progress} />
       }
-      <ProgressBar progressLength={progress.length} questionsLength={questions.length}/>  
+      <ProgressBar progressLength={progress.length} totalSteps={totalSteps}/>  
     </div>
   );
 }
