@@ -47,8 +47,7 @@ export const Question = ( {
                     value={value}
                 />
             </div>
-            {
-                showResponse &&
+            {   showResponse &&
                     <>
                         <QuestionResult status={status} response={response} />
                         <div className='question__next animate__animated animate__fadeIn'>
