@@ -31,14 +31,17 @@ form {
 }
 
 input {
+    font-size: 1rem;
     padding: 6px;
 }
 
 select {
+    font-size: 1rem;
     padding: 6px;
 }
 
 button {
+    font-size: 1rem;
     cursor: pointer;
     padding: 8px;
     text-align: center;
@@ -72,6 +75,12 @@ li {
     display: none;
 }
 
+.lom {
+    font-weight: 600;
+    font-family: monospace;    
+}
+
+
 .questions {
     width: 320px;
     min-height: 320px;
@@ -92,8 +101,6 @@ li {
     font-size: 1.3rem;
     font-weight: 600;
 }
-
-.question__form { }
 
 .question__result {
     display: flex;
@@ -131,8 +138,6 @@ li {
     gap: 35px;
 }
 
-.result__veredict { }
-
 .progress {
     display: block;
     position: fixed;
@@ -143,6 +148,7 @@ li {
     bottom: 0px;
     left: 0px;
 }
+
 
 
 
