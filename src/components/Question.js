@@ -49,13 +49,12 @@ export const Question = ( {
             </div>
             {
                 showResponse &&
-                    <QuestionResult status={status} response={response} />
-            }
-            {
-                showResponse && 
-                    <div className='question__next animate__animated animate__fadeIn'>
-                        <button onClick={nextStep}>Next</button>
-                    </div>
+                    <>
+                        <QuestionResult status={status} response={response} />
+                        <div className='question__next animate__animated animate__fadeIn'>
+                            <button onClick={nextStep}>Next</button>
+                        </div> 
+                    </>
             }
         </div>
     );
