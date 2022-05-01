@@ -1,4 +1,4 @@
-# Last change for humanity
+# Last chance for humanity
 
 ### Installation and use
 
