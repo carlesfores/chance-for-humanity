@@ -1,7 +1,7 @@
 import React from "react";
 
 export const QuestionResult = ( { status, response } ) => {
-    
+
     return(
         <div className="question__result">
             { status ? 

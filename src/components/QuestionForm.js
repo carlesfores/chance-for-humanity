@@ -1,6 +1,7 @@
 import React from "react";
 
 export const QuestionForm = ( { input, handleSubmit, handleChange, showResponse, value } ) => {
+
     return(
         <form onSubmit={ handleSubmit }>
             {   input.type === 'select' ? 
@@ -27,7 +28,7 @@ export const QuestionForm = ( { input, handleSubmit, handleChange, showResponse,
                 disabled={ value === '' }
                 className={ showResponse ? 'disabled' : '' } 
             >
-            submit
+            Submit
             </button>
         </form>
     )

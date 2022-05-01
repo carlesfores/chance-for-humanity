@@ -7,35 +7,31 @@ export const Result = ( {  progress } ) => {
 
     return(
         <div className='result animate__animated animate__fadeIn'>
-            <div className='result__title'> RESULTS </div>
+            <div className='result__title'> Results </div>
             <div className='result__content'>
-                <div className='result__question'>
-                    <ul>
-                        {
-                            progress.map( (p) => {
-                                const { step, status } = p;
-                                return(
-                                    <li key={ step }> Question { step }</li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-                <div className='result__status'>
-                    <ul>
-                        {
-                            progress.map( (p) => {
-                                const { step, status } = p;
-                                return <li key={ step }>{ status ? 'Correct': 'Incorrect' } </li>
-                            })
-                        }
-                    </ul>
-                </div>
+                <ul>
+                    {
+                        progress.map( (p) => {
+                            const { step } = p;
+                            return(
+                                <li key={ step }> Question { step }</li>
+                            )
+                        })
+                    }
+                </ul>
+                <ul>
+                    {
+                        progress.map( (p) => {
+                            const { step, status } = p;
+                            return <li key={ step }>{ status ? 'Correct': 'Incorrect' } </li>
+                        })
+                    }
+                </ul>
             </div>
             <div className='result_veredict animate__animated animate__fadeIn animate__delay-1s'>
                     <div>
-                        The veredict is {percentage}% of correct answers,
-                        the humanity will { percentage > 60 ? 'continue':'disapear' }
+                        You got { percentage }% of the questions right, humanity
+                        { percentage > 50 ? 'is safe':'will disappear' }
                     </div>
                 </div>
         </div>

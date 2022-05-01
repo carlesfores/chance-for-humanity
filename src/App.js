@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { ProgressBar } from './components/ProgressBar';
 import { Question } from './components/Question';
 import { Result } from './components/Result';
 import { questions } from './data/questions.js';
@@ -48,6 +49,7 @@ function App() {
         :
         <Result progress={ progress } />
       }
+      <ProgressBar progressLength={ progress.length } questionsLength={ questions.length }/>  
     </div>
   );
 }
