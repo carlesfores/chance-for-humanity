@@ -19,11 +19,11 @@ export const Result = ( {  progress } ) => {
                 </ul>
             </div>
             <div className='result__veredict animate__animated animate__fadeIn animate__delay-1s'>
-                    <div>
-                        You got {percentage}% of the questions right, humanity
-                        {percentage > 50 ? ' is safe':' will disappear'}
-                    </div>
+                <div>
+                    You got {percentage}% of the questions right, humanity
+                    {percentage > 50 ? ' is safe':' will disappear'}
                 </div>
+            </div>
         </div>
     );
 }
