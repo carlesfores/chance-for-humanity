@@ -3,7 +3,7 @@ import React from 'react';
 export const Result = ( {  progress } ) => {
 
     const correct = progress.filter((p) => p.result);
-    const percentage = (correct.length/progress.length ) * 100;
+    const percentage = Math.round((correct.length/progress.length ) * 100);
 
     return(
         <div className='result animate__animated animate__fadeIn'>
