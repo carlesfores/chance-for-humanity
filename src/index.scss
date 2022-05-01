@@ -84,14 +84,11 @@ li {
     display: none;
 }
 
-.questions {
-    width: 320px;
-}
-
 .question {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    width: 320px;
     &__title {
         font-size: 1.3rem;
         font-weight: 600;

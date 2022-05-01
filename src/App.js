@@ -32,22 +32,20 @@ function App() {
 
   return (
     <div className='container'>
-      { !showResult ?
-        <div className='questions'>
-          {
-            questions.map( ( question ) => 
-              <Question
-                key={question.id}
-                updateProgress= {updateProgress}
-                nextStep= {nextStep}
-                step={step}
-                {...question}
-              /> 
-            )
-          }
-        </div>
-        :<Result progress={progress} />
-      }
+        { !showResult &&
+          questions.map( ( question ) => 
+            <Question
+              key={question.id}
+              updateProgress= {updateProgress}
+              nextStep= {nextStep}
+              step={step}
+              {...question}
+            /> 
+          )
+        }
+        { showResult &&
+          <Result progress={progress} />
+        }
       <ProgressBar progressLength={progress.length} totalSteps={totalSteps}/>  
     </div>
   );
