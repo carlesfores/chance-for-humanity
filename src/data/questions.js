@@ -124,7 +124,7 @@ export const questions = [
     },
     {
         'id': 10,
-        'question': 'How many bones are there in the human body',
+        'question': 'How many bones are there in the human body?',
         'response': '206',
         'input': {
             'type': 'number',

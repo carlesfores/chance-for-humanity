@@ -11,12 +11,13 @@ function App() {
   const [ showResult, setShowResult ] = useState(false);
   const totalSteps = questions.length;
 
-  const updateProgress = ( status ) => {
+  const updateProgress = ( result, question ) => {
     setProgress([
       ...progress,
       {
         'step': step,
-        'status': status
+        'question': question,
+        'result': result
       }
     ])
   };

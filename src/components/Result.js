@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Result = ( {  progress } ) => {
 
-    const correct = progress.filter((p) => p.status);
+    const correct = progress.filter((p) => p.result);
     const percentage = (correct.length/progress.length ) * 100;
 
     return(
@@ -12,21 +12,13 @@ export const Result = ( {  progress } ) => {
                 <ul>
                     {
                         progress.map((p) => {
-                            const {step} = p;
-                            return <li key={step}>Question {step}</li>
-                        })
-                    }
-                </ul>
-                <ul>
-                    {
-                        progress.map((p) => {
-                            const {step, status} = p;
-                            return <li key={step}>{status ? 'Correct': 'Incorrect'}</li>
+                            const {step, question, result} = p;
+                            return <li key={step}>{step}) {question}<span>{result ? 'Correct': 'Incorrect'}</span></li>
                         })
                     }
                 </ul>
             </div>
-            <div className='result_veredict lom animate__animated animate__fadeIn animate__delay-1s'>
+            <div className='result__veredict animate__animated animate__fadeIn animate__delay-1s'>
                     <div>
                         You got {percentage}% of the questions right, humanity
                         {percentage > 50 ? ' is safe':' will disappear'}

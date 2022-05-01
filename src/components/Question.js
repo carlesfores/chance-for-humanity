@@ -23,7 +23,7 @@ export const Question = ( {
     const handleSubmit = ( event ) => {
         event.preventDefault();
         const result = validateResponse();
-        updateProgress(result);
+        updateProgress(result, question);
         setStatus(result)
         setShowResponse(true);
         setValue('');
