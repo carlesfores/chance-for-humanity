@@ -1,5 +1,10 @@
+$color_white: #F9F9F9;
+$color_orange: #FD9A00;
+$color_red: #ff0000;
+$color_green: #038d03;
+
 html {
-    background-color: #F9F9F9;
+    background-color: $color_white;
     height: 100%;
     font-size: 100%; 
     font-family: Arial, Helvetica, sans-serif;
@@ -41,14 +46,15 @@ select {
 }
 
 button {
-    font-size: 1rem;
+    border: none;
+    background-color: $color_orange;
+    border-radius: 1.5rem;
+    color: $color_white;
     cursor: pointer;
+    font-size: 1rem;
     padding: 8px;
     text-align: center;
     width: 120px;
-    background-color: #FD9A00;
-    color: #F9F9F9;
-    border: none;
 }
 
 button:hover {
@@ -80,7 +86,6 @@ li {
     font-family: monospace;    
 }
 
-
 .questions {
     width: 320px;
     min-height: 320px;
@@ -90,35 +95,28 @@ li {
     display: flex;
     flex-direction: column;
     gap: 14px;
-
-}
-
-.question_disabled {
-    display: none;
-}
-
-.question__title {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.question__result {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.question__result_correct {
-    color: #038d03;
-}
-
-.question__result_wrong {
-    color: #ff0000;
-}
-
-.question__next {
-    display: flex;
-    justify-content: center;
-    margin-top: 14px;
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    &__result {
+        display: flex;
+        justify-content: flex-start;
+        &_correct {
+            color: $color_green;
+        }
+        &_wrong {
+            color: $color_red;
+        }
+        &__next {
+            display: flex;
+            justify-content: center;
+            margin-top: 14px;
+        }
+    }
+    &_disabled {
+        display: none;
+    }
 }
 
 .result {
@@ -128,14 +126,14 @@ li {
     padding: 24px;
     width: 320px;
     min-height: 320px;
-}
-.result__title {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-.result__content {
-    display: flex;
-    gap: 35px;
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    &__content {
+        display: flex;
+        gap: 35px;
+    }
 }
 
 .progress {
@@ -143,7 +141,7 @@ li {
     position: fixed;
     z-index: 999;
     height: 10px;
-    background-color: #FD9A00;
+    background-color: $color_orange;
     width: 0vw;
     bottom: 0px;
     left: 0px;

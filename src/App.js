@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import { ProgressBar } from './components/ProgressBar';
 import { Question } from './components/Question';
 import { Result } from './components/Result';
