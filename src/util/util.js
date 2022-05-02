@@ -4,6 +4,6 @@ export const getPercentage = ( partial, total ) => {
     return Math.round((partial / total) * 100);
 }
 
-export const getQuestionById = (id) => {
-    return questions.find( (question) => question.id === id);
+export const getQuestionById = ( id ) => {
+    return questions.find((question) => question.id === id);
 }

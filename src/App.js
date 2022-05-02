@@ -38,7 +38,7 @@ function App() {
             step={step}
             nextStep= {nextStep}
             updateProgress= {updateProgress}
-          /> 
+        /> 
       </div>
       <div className={`main__section ${!showResult?'disabled':''}`}>
         <Results progress={progress} />
