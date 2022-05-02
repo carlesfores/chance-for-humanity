@@ -1,4 +1,5 @@
 import React from "react";
+import './QuestionResult.scss';
 
 export const QuestionResult = ( { status, response } ) => {
 

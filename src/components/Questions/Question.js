@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { QuestionResult } from './QuestionResult';
 import { QuestionForm } from './QuestionForm';
+import './Question.scss';
 
 export const Question = ( {
     updateProgress,
@@ -38,22 +39,20 @@ export const Question = ( {
             <div className='question__title'>
                  {question}
             </div>
-            <div className='question__form'>
-                <QuestionForm 
-                    input={input} 
-                    handleSubmit={handleSubmit} 
-                    handleChange={handleChange} 
-                    showResponse={showResponse}
-                    value={value}
-                />
-            </div>
-            {   showResponse &&
-                    <>
-                        <QuestionResult status={status} response={response} />
-                        <div className='question__next animate__animated animate__fadeIn'>
-                            <button onClick={nextStep}>Next</button>
-                        </div> 
-                    </>
+            <QuestionForm 
+                input={input} 
+                handleSubmit={handleSubmit} 
+                handleChange={handleChange} 
+                showResponse={showResponse}
+                value={value}
+            />
+            { showResponse && (
+                <>
+                    <QuestionResult status={status} response={response} />
+                    <div className='question__next animate__animated animate__fadeIn'>
+                        <button onClick={nextStep}>Next</button>
+                    </div> 
+                </> ) 
             }
         </div>
     );

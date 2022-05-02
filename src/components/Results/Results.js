@@ -1,9 +1,11 @@
 import React from 'react';
+import './Results.scss';
+import { getPercentage } from '../../util/util.js';
 
 export const Results = ( {  progress } ) => {
 
     const correct = progress.filter((p) => p.result);
-    const percentage = Math.round((correct.length/progress.length ) * 100);
+    const percentage = getPercentage(correct.length, progress.length);
 
     return(
         <div className='results animate__animated animate__fadeIn'>

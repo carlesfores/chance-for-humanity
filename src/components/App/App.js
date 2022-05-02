@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ProgressBar } from './components/ProgressBar';
-import { Question } from './components/Question';
-import { Results } from './components/Results';
-import { questions } from './data/questions.js';
+import { ProgressBar } from '../ProgressBar/ProgressBar';
+import { Question } from '../Questions/Question';
+import { Results } from '../Results/Results';
+import { questions } from '../../data/questions.js';
+import './App.scss';
 
 function App() {
 
@@ -30,6 +31,12 @@ function App() {
     }
   };
 
+  const onShowResults = () => {
+    return showResult && (
+      <Results progress={progress} />
+    );
+  }
+
   return (
     <div className='container'>
       { !showResult &&
@@ -43,9 +50,7 @@ function App() {
           /> 
         )
       }
-      { showResult &&
-        <Results progress={progress} />
-      }
+      { onShowResults() }
       <ProgressBar progressLength={progress.length} totalSteps={totalSteps}/>  
     </div>
   );

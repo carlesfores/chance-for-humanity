@@ -1,0 +1,10 @@
+.question__result {
+    display: flex;
+    justify-content: flex-start;
+    &_correct {
+        color: #038d03;
+    }
+    &_wrong {
+        color: #ff0000;
+    }
+}

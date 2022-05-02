@@ -1,0 +1,18 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 320px;
+    &__title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    &__next {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+    }
+    &_disabled {
+        display: none;
+    }
+}
