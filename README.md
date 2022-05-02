@@ -1,5 +1,9 @@
 # Last chance for humanity
 
+### Prerequisitos
+
+* Node: v16+
+
 ### Installation and use
 
 1) Clone this repository
