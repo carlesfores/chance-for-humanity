@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ProgressBar } from './components/ProgressBar/ProgressBar';
-import { Question } from './components/Questions/Question';
+import { Question } from './components/Question/Question';
 import { Results } from './components/Results/Results';
 import { questions } from './data/questions.js';
 import './App.scss';
