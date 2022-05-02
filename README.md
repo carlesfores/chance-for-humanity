@@ -1,6 +1,6 @@
 # Last chance for humanity
 
-### Prerequisitos
+### Prerequisites
 
 * Node: v16+
 
