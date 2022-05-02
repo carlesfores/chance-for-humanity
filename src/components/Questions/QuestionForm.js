@@ -11,8 +11,8 @@ export const QuestionForm = ( {
     return(
         <>
             <form onSubmit={handleSubmit}>
-                {input.type === 'select' ? 
-                    <select value={value} onChange={handleChange} className={showResponse ? 'disabled' : ''}>
+                { input.type === 'select' &&
+                    <select value={value} onChange={handleChange} disabled={showResponse}>
                         <option>Choose an option</option>
                         {
                             input.options.map((option) => 
@@ -22,19 +22,16 @@ export const QuestionForm = ( {
                             )
                         }
                     </select>
-                    :<input
-                        className={showResponse ? 'disabled' : '' } 
+                }
+                { input.type !== 'select' &&
+                    <input
                         type={input.type}
                         value={value}
                         onChange={handleChange}
+                        disabled={showResponse}
                     />
                 }
-                <button
-                    type="submit"
-                    disabled={value === ''}
-                    className={showResponse ? 'disabled' : ''} 
-                >Submit
-                </button>
+                <button type="submit" disabled={value ===''|| showResponse}>Submit</button>
             </form>
         </>
     )

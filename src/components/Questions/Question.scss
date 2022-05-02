@@ -7,10 +7,19 @@
         font-size: 1.3rem;
         font-weight: 600;
     }
+    &__result {
+        display: flex;
+        justify-content: flex-start;
+        &_correct {
+            color: #038d03;
+        }
+        &_wrong {
+            color: #ff0000;
+        }
+    }
     &__next {
         display: flex;
         justify-content: center;
-        margin-top: 18px;
     }
     &_disabled {
         display: none;

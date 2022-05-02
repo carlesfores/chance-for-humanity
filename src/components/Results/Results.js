@@ -15,7 +15,7 @@ export const Results = ( {  progress } ) => {
                     {
                         progress.map((p) => {
                             const {step, question, result} = p;
-                            return <li key={step}>{step}) {question}<span>{result ? 'Correct': 'Incorrect'}</span></li>
+                            return <li key={step}>{step}) {question}<span>{result?'Correct':'Incorrect'}</span></li>
                         })
                     }
                 </ul>

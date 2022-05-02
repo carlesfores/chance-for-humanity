@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { QuestionResult } from './QuestionResult';
 import { QuestionForm } from './QuestionForm';
 import './Question.scss';
 
@@ -27,11 +26,15 @@ export const Question = ( {
         updateProgress(result, question);
         setStatus(result)
         setShowResponse(true);
-        setValue('');
     }
 
     const handleChange = ( event ) => {
         setValue(event.target.value);
+    }
+
+    const handleClick = () => {
+        nextStep();
+        setValue('');
     }
 
     return(
@@ -46,14 +49,15 @@ export const Question = ( {
                 showResponse={showResponse}
                 value={value}
             />
-            { showResponse && (
-                <>
-                    <QuestionResult status={status} response={response} />
-                    <div className='question__next animate__animated animate__fadeIn'>
-                        <button onClick={nextStep}>Next</button>
-                    </div> 
-                </> ) 
-            }
+            <div className="question__result" style={{ visibility:showResponse?'visible':'hidden'}}>
+                { status  
+                    ? <div className="question__result_correct">Correct</div> 
+                    : <div className="question__result_wrong">Incorrect, correct answer is {response}</div>
+                }
+            </div>
+            <div className='question__next' style={{visibility:showResponse?'visible':'hidden'}} >
+                <button onClick={handleClick}>Next</button>
+            </div> 
         </div>
     );
 }

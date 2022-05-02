@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ProgressBar } from '../ProgressBar/ProgressBar';
-import { Question } from '../Questions/Question';
-import { Results } from '../Results/Results';
-import { questions } from '../../data/questions.js';
+import { ProgressBar } from './components/ProgressBar/ProgressBar';
+import { Question } from './components/Questions/Question';
+import { Results } from './components/Results/Results';
+import { questions } from './data/questions.js';
 import './App.scss';
 
 function App() {
