@@ -31,26 +31,18 @@ function App() {
     }
   };
 
-  const renderResults = () => {
-    return showResult && (
-      <Results progress={progress} />
-    );
-  }
-
   return (
-    <div className='container'>
-      { !showResult &&
-        questions.map( ( question ) => 
-          <Question
-            key={question.id}
-            {...question}
+    <div className='main'>
+      <div className={`main__section ${showResult?'disabled':''}`}>
+        <Question
             step={step}
             nextStep= {nextStep}
             updateProgress= {updateProgress}
           /> 
-        )
-      }
-      { renderResults() }
+      </div>
+      <div className={`main__section ${!showResult?'disabled':''}`}>
+        <Results progress={progress} />
+      </div>  
       <ProgressBar progressLength={progress.length} totalSteps={totalSteps}/>  
     </div>
   );

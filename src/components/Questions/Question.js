@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { QuestionForm } from './QuestionForm';
+import { getQuestionById } from './../../util/util';
 import './Question.scss';
 
 export const Question = ( {
-    id,
-    question,
-    response,
-    input,
     step,
     nextStep,
     updateProgress
@@ -15,9 +12,16 @@ export const Question = ( {
     const [value, setValue] = useState('');
     const [status, setStatus] = useState(true);
     const [showResponse, setShowResponse] = useState(false);
+    const { id, question, response, input } = getQuestionById(step);
 
     const validateResponse = () => {
         return value.toLocaleLowerCase() === response.toLocaleLowerCase();
+    }
+
+    const resetStates = () => {
+        setValue('');
+        setStatus(true);
+        setShowResponse(false);
     }
 
     const handleSubmit = ( event ) => {
@@ -34,7 +38,7 @@ export const Question = ( {
 
     const handleClick = () => {
         nextStep();
-        setValue('');
+        resetStates();
     }
 
     return(
