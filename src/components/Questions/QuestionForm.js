@@ -31,7 +31,7 @@ export const QuestionForm = ( {
                         disabled={showResponse}
                     />
                 }
-                <button type="submit" disabled={value ===''|| showResponse}>Submit</button>
+                <button type="submit" disabled={value ==='' || showResponse}>Submit</button>
             </form>
         </>
     )

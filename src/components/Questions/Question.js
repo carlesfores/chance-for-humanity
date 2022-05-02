@@ -3,17 +3,17 @@ import { QuestionForm } from './QuestionForm';
 import './Question.scss';
 
 export const Question = ( {
-    updateProgress,
-    nextStep,
-    step,
     id,
     question,
     response,
-    input
+    input,
+    step,
+    nextStep,
+    updateProgress
 } ) => {
 
     const [value, setValue] = useState('');
-    const [status, setStatus] = useState(false);
+    const [status, setStatus] = useState(true);
     const [showResponse, setShowResponse] = useState(false);
 
     const validateResponse = () => {
@@ -38,7 +38,7 @@ export const Question = ( {
     }
 
     return(
-        <div className={`question${step !== id ? '_disabled' : ''} animate__animated animate__fadeIn`}>
+        <div className={`question${step!==id?'_disabled':''} animate__animated animate__fadeIn`}>
             <div className='question__title'>
                  {question}
             </div>
@@ -49,10 +49,10 @@ export const Question = ( {
                 showResponse={showResponse}
                 value={value}
             />
-            <div className="question__result" style={{ visibility:showResponse?'visible':'hidden'}}>
+            <div className="question__result" style={{visibility:showResponse?'visible':'hidden'}}>
                 { status  
-                    ? <div className="question__result_correct">Correct</div> 
-                    : <div className="question__result_wrong">Incorrect, correct answer is {response}</div>
+                    ?<div className="question__result_correct">Correct</div> 
+                    :<div className="question__result_wrong">Incorrect, correct answer is {response}</div>
                 }
             </div>
             <div className='question__next' style={{visibility:showResponse?'visible':'hidden'}} >

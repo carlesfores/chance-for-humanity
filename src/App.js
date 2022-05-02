@@ -31,7 +31,7 @@ function App() {
     }
   };
 
-  const onShowResults = () => {
+  const renderResults = () => {
     return showResult && (
       <Results progress={progress} />
     );
@@ -43,14 +43,14 @@ function App() {
         questions.map( ( question ) => 
           <Question
             key={question.id}
-            updateProgress= {updateProgress}
-            nextStep= {nextStep}
-            step={step}
             {...question}
+            step={step}
+            nextStep= {nextStep}
+            updateProgress= {updateProgress}
           /> 
         )
       }
-      { onShowResults() }
+      { renderResults() }
       <ProgressBar progressLength={progress.length} totalSteps={totalSteps}/>  
     </div>
   );
